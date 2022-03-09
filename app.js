@@ -89,6 +89,7 @@ function del(){
         num1 = ""
         actual.textContent = ""
     }else if(operator && actual.textContent===""){
+        operator = ""
         num1 = ""
         previo.textContent = ""
     }else{
