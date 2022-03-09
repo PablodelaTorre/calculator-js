@@ -25,11 +25,25 @@ let num1 = ""
 let num2 = ""
 
 
-
 function clickNumero(val){
     if (operator===""){
         num1 = num1 + val
+        actual.textContent = num1
     }else{
         num2 = num2 + val
     }
 }
+
+function clickOperador(val){
+    operator = val
+    actual.textContent = ""
+    previo.textContent = num1 + operator
+}
+
+mas.addEventListener("click", ()=>{
+    clickOperador("+")
+})
+
+cero.addEventListener("click", ()=>{
+    clickNumero(0)
+})
