@@ -17,6 +17,19 @@ const deci = document.getElementById("deci")
 const cero = document.getElementById("cero")
 const igual = document.getElementById("igual")
 
-function clickNum() {
-    
+const previo = document.getElementById("previo")
+const actual = document.getElementById("actual")
+
+let operator = ""
+let num1 = ""
+let num2 = ""
+
+
+
+function clickNumero(val){
+    if (operator===""){
+        num1 = num1 + val
+    }else{
+        num2 = num2 + val
+    }
 }
