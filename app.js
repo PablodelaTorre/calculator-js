@@ -1,5 +1,5 @@
 const aC = document.getElementById("ac")
-const del = document.getElementById("del")
+const dele = document.getElementById("del")
 
 const divi = document.getElementById("divi")
 
@@ -49,6 +49,55 @@ function clickOperador(val){
     previo.textContent = num1 + operator
 }
 
+function borraTodo(){
+    actual.textContent = ""
+    previo.textContent = ""
+    operator = ""
+    num1 = ""
+    num2 = ""
+}
+
+function result(){
+    if(operator==="+"){
+        actual.textContent = (Number(num1) + Number(num2));
+        previo.textContent = (Number(num1) + "+" +  Number(num2))
+    }else if(operator==="-"){
+        actual.textContent = (Number(num1) - Number(num2));
+        previo.textContent = (Number(num1) + "-" +  Number(num2))
+    }else if(operator==="*"){
+        actual.textContent = (Number(num1) * Number(num2));
+        previo.textContent = (Number(num1) + "*" +  Number(num2))
+    }else if(operator==="/"){
+        actual.textContent = (Number(num1) / Number(num2));
+        previo.textContent = (Number(num1) + "/" +  Number(num2))
+    }
+    // switch (operator) {
+    //     case "+":actual.textContent = (Number(num1) + Number(num2)); 
+    //     break
+    //     case "-":actual.textContent = (Number(num1) - Number(num2));
+    //     break
+    //     case "*":actual.textContent = (Number(num1) * Number(num2));
+        
+    //     break
+    //     case "/":{actual.textContent = (Number(num1) / Number(num2)); 
+        
+    //     break
+    // }
+}
+function del(){
+    if (!operator){
+        num1 = ""
+        actual.textContent = ""
+    }else if(operator && actual.textContent===""){
+        num1 = ""
+        previo.textContent = ""
+    }else{
+        num2 = ""
+        actual.textContent = ""
+    }
+}
+
+
 mas.addEventListener("click", ()=>{
     clickOperador("+")
 })
@@ -91,4 +140,20 @@ ocho.addEventListener("click", ()=>{
 })
 nueve.addEventListener("click", ()=>{
     clickNumero(9)
+})
+
+aC.addEventListener("click", ()=>{
+    borraTodo()
+})
+
+deci.addEventListener("click", ()=>{
+    clickNumero(".")
+})
+
+igual.addEventListener("click", ()=>{
+    result()
+})
+
+dele.addEventListener("click", ()=>{
+    del()
 })
