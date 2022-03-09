@@ -1,0 +1,73 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(to right, #03fcfc, #befc03, #fc6203);
+  }
+  
+  .App{
+    margin-top: 2rem;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .titulo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #fafafa;
+    text-align: center;
+  }
+  
+  .calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 80vh;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(80px, auto) repeat(6, 80px);
+  }
+  
+  .calculator-grid > button{
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    border: 1px solid white;
+    outline: none;
+    background-color: #fafafa45;
+    margin: 3px;
+  }
+  
+  .calculator-grid > button:hover{
+    background-color: #fafafa90;
+  }
+  
+  .doble-largo{
+    grid-column: span 2;
+  }
+  
+  .output {
+    grid-column: 1 / -1;
+    margin-bottom: 5px;
+    background-color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: 8px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  
+  .output .valor-previo{
+    color: black;
+    font-size: 1.5rem;
+  }
+  
+  .output .valor-actual{
+    color: green;
+    font-size: 2.5rem;
+  }
